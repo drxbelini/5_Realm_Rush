@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[ExecuteInEditMode]
-[SelectionBase]
+[ExecuteInEditMode] //For make the script work in Edit mode on unity. 
+[SelectionBase] //For the selection on the game object in the editor prioritise the father of hierarchy when is selected on scene screen.
 [RequireComponent(typeof(Waypoint))]
 
 
@@ -25,10 +25,8 @@ public class CubeEditor : MonoBehaviour
     }
 
     private void UpdatLable()
-    {
-        int gridSize = waypoint.GetGridSize();
-
-        string cubeLable = waypoint.GetGridPos().x / gridSize + "," + waypoint.GetGridPos().y / gridSize;
+    {        
+        string cubeLable = waypoint.GetGridPos().x + "," + waypoint.GetGridPos().y;
         TextMesh textMesh = GetComponentInChildren<TextMesh>();
         textMesh.text = cubeLable;
         gameObject.name = cubeLable;
@@ -39,9 +37,9 @@ public class CubeEditor : MonoBehaviour
         int gridSize = waypoint.GetGridSize();
 
                transform.position = new Vector3(
-                   waypoint.GetGridPos().x, 
+                   waypoint.GetGridPos().x * gridSize, 
                    0f, 
-                   waypoint.GetGridPos().y
+                   waypoint.GetGridPos().y * gridSize
                    );
     }
 }
