@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnemyMoviment : MonoBehaviour
 {
- 
+    [SerializeField] float gameSpeed = 1f;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +20,7 @@ public class EnemyMoviment : MonoBehaviour
         foreach(Waypoint waypoint in path)
         {
             transform.position = waypoint.transform.position;
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(gameSpeed);
         }  
-    }
+    }   
 }

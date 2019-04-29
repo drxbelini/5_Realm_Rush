@@ -10,7 +10,7 @@ public class PathFinder : MonoBehaviour
     Queue<Waypoint> queue = new Queue<Waypoint>();
     bool isRunning = true;
     Waypoint searchCenter;
-    List<Waypoint> path = new List<Waypoint>(); //todo become privite
+    List<Waypoint> path = new List<Waypoint>();
 
     Vector2Int[] direction =
     {
@@ -23,11 +23,20 @@ public class PathFinder : MonoBehaviour
 
     public List<Waypoint> GetPath()
     {
+        if (path.Count == 0)
+        {
+            CalculatingPath();
+        }
+        return path;
+        
+    }
+
+    private void CalculatingPath()
+    {
         LoadBlocks();
         ChangeColor();
         BreadthFirstSearch();
         CreatePath();
-        return path;
     }
 
     private void CreatePath()
@@ -56,7 +65,7 @@ public class PathFinder : MonoBehaviour
             searchCenter.isExplored = true;
         }
 
-        print("Finishd path finding");
+       // print("Finishd path finding");
     }
 
     private void HaltEndFound()
