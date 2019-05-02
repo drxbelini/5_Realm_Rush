@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpawnEnemies : MonoBehaviour
 {
     [SerializeField] EnemyMoviment Enemy;
+    [Range (0.1f, 120f)]
     [SerializeField] float SpawnSpeed = 3f;
     // Start is called before the first frame update
     void Start()

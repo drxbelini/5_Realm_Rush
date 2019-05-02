@@ -4774,7 +4774,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitFX: {fileID: 747088873}
-  hits: 30
+  hits: 20
 --- !u!114 &115612601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4787,6 +4787,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab074db9a34cb2148930cd6b78559eb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameSpeed: 1
 --- !u!1001 &6531557528885859969
 PrefabInstance:
   m_ObjectHideFlags: 0

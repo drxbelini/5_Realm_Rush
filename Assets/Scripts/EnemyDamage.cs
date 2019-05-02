@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OnColision : MonoBehaviour
+public class EnemyDamage : MonoBehaviour
 {
 
     [SerializeField] ParticleSystem hitFX;
