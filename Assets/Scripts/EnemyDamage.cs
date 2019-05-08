@@ -6,18 +6,20 @@ public class EnemyDamage : MonoBehaviour
 {
 
     [SerializeField] ParticleSystem hitFX;
+    [SerializeField] ParticleSystem deathFX;
     [SerializeField] int hits = 30;
+    [SerializeField] int damageHits = 3;
 
     void OnParticleCollision(GameObject other)
-    {
-        hitFX.Play();
-        if(hits > 1)
+    {        
+        if(hits >= 0)
         {
-            hits--;
+            hitFX.Play();
+            hits = hits - damageHits;
         }
-
         else
-        {         
+        {
+            deathFX.Play();
             Destroy(gameObject);
         }
     }
