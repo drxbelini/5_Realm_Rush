@@ -10,9 +10,7 @@ public class Waypoint : MonoBehaviour
     public Waypoint exploredFrom;
     public bool isPlaceble = true;
     [SerializeField] Tower towerPreefab;
-    
-
-  
+   
     const int gridSize = 10;
 
     public int GetGridSize()
@@ -29,7 +27,7 @@ public class Waypoint : MonoBehaviour
     }
 
     void OnMouseOver()
-    {
+    {    
         if (Input.GetKeyDown(KeyCode.Mouse0) && isPlaceble)
         {
             Debug.Log("Mouse is over GameObject:" + gameObject.name);                      

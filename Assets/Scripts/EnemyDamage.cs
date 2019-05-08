@@ -4,22 +4,24 @@ using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour
 {
-
+    
     [SerializeField] ParticleSystem hitFX;
     [SerializeField] ParticleSystem deathFX;
     [SerializeField] int hits = 30;
     [SerializeField] int damageHits = 3;
-
+    
     void OnParticleCollision(GameObject other)
-    {        
-        if(hits >= 0)
+    {
+        
+        if (hits >= 0)
         {
             hitFX.Play();
             hits = hits - damageHits;
         }
         else
         {
-            deathFX.Play();
+            var playFX = Instantiate(deathFX, transform.position, Quaternion.identity);
+            playFX.Play();
             Destroy(gameObject);
         }
     }

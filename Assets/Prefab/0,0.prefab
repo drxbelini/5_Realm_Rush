@@ -64,6 +64,7 @@ MonoBehaviour:
   isPlaceble: 1
   towerPreefab: {fileID: 3334113973763567063, guid: d9a60fab01ca53d408e8d75fc0161484,
     type: 3}
+  deathFX: {fileID: 198537984209914932, guid: 1a51bfda454239a41afb7dee687c6ac0, type: 3}
 --- !u!65 &8213261017128988122
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -154,7 +155,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7267600093044491189}
-  m_Text: 0,0
+  m_Text: 2,0
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -227,7 +228,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 20bb4175cbb9ffc43865e3e495df43d6, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
