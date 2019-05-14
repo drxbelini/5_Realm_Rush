@@ -20,15 +20,13 @@ public class PathFinder : MonoBehaviour
         Vector2Int.left
     };
 
-
     public List<Waypoint> GetPath()
     {
         if (path.Count == 0)
         {
             CalculatingPath();
         }
-        return path;
-        
+        return path;        
     }
 
     private void CalculatingPath()
@@ -69,8 +67,6 @@ public class PathFinder : MonoBehaviour
             ExploreNeighbours();
             searchCenter.isExplored = true;
         }
-
-       // print("Finishd path finding");
     }
 
     private void HaltEndFound()
@@ -96,16 +92,14 @@ public class PathFinder : MonoBehaviour
     }
 
     private void SeachingNewNeighbours(Vector2Int neighbourCoodinates)
-    {
-       
+    {       
         Waypoint neighbour = grid[neighbourCoodinates];
         if (neighbour.isExplored || queue.Contains(neighbour))
         {
             //do nothing
         }
         else
-        {
-            
+        {            
             queue.Enqueue(neighbour);            
             neighbour.exploredFrom = searchCenter;
         }
@@ -115,7 +109,6 @@ public class PathFinder : MonoBehaviour
     {
         var waypoints = FindObjectsOfType <Waypoint>();
         
-
         foreach (Waypoint waypoint in waypoints)
         {
             var wayPointPos = waypoint.GetGridPos();            
@@ -127,7 +120,6 @@ public class PathFinder : MonoBehaviour
             {
                 grid.Add(wayPointPos, waypoint);              
             }            
-        }
-        
+        }        
     }
 }

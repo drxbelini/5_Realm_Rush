@@ -11,8 +11,7 @@ public class EnemyDamage : MonoBehaviour
     [SerializeField] int damageHits = 3;
     
     void OnParticleCollision(GameObject other)
-    {
-        
+    {        
         if (hits >= 0)
         {
             hitFX.Play();
@@ -21,6 +20,8 @@ public class EnemyDamage : MonoBehaviour
         else
         {
             var playFX = Instantiate(deathFX, transform.position, Quaternion.identity);
+            float destroyDelay = playFX.main.duration;
+            Destroy(playFX.gameObject,destroyDelay);              
             playFX.Play();
             Destroy(gameObject);
         }

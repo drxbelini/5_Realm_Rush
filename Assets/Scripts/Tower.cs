@@ -9,6 +9,8 @@ public class Tower : MonoBehaviour
     [SerializeField] ParticleSystem bullets;
     [SerializeField] float atackRange = 10f;
 
+    public Waypoint baseWaypoint;
+
     Transform targetEnemy;
 
     void Update()
@@ -20,7 +22,6 @@ public class Tower : MonoBehaviour
          objectToPan.LookAt(targetEnemy);
          FireEnemy();
         }
-
         else
         {
             Shoot(false);
@@ -38,8 +39,7 @@ public class Tower : MonoBehaviour
         {
             closestEnemy = GetClosest(closestEnemy, testEnemy.transform);
         }
-        targetEnemy = closestEnemy;
-    
+        targetEnemy = closestEnemy;    
     }
 
     private Transform GetClosest(Transform transformA, Transform transformB)
@@ -52,13 +52,11 @@ public class Tower : MonoBehaviour
             return transformA;
         }
         return transformB;
-
     }
 
     private void FireEnemy()
     {
        float distanceToEnemy =  Vector3.Distance(targetEnemy.transform.position, gameObject.transform.position);
-
 
         if(distanceToEnemy <= atackRange)
         {
@@ -67,8 +65,7 @@ public class Tower : MonoBehaviour
         else
         {
             Shoot(false);
-        }
-    
+        }    
     }
 
     void Shoot(bool isActive)
@@ -76,5 +73,4 @@ public class Tower : MonoBehaviour
         var emissionModule = bullets.emission;
         emissionModule.enabled = isActive;
     }
-
 }
