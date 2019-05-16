@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class EnemyMoviment : MonoBehaviour
 {
-    [SerializeField] float gameSpeed = 1f;
+    [SerializeField] float gameSpeed = .5f;
+    [SerializeField] ParticleSystem explosionDamage;
+    PlayerHelth playerHelth;
 
     // Start is called before the first frame update
     void Start()
@@ -16,11 +18,21 @@ public class EnemyMoviment : MonoBehaviour
     }
 
     IEnumerator FollowPath(List<Waypoint>path)
-    {   
-        foreach(Waypoint waypoint in path)
+    {
+        foreach (Waypoint waypoint in path)
         {
             transform.position = waypoint.transform.position;
             yield return new WaitForSeconds(gameSpeed);
-        }  
-    }   
+        }
+       // playerHelth.HelthDecreacer();
+        damageOnBaseFX();
+    }
+
+    private void damageOnBaseFX()
+    {
+        var newExplosion = Instantiate<ParticleSystem>(explosionDamage, transform.position, Quaternion.identity);
+        newExplosion.Play();
+        Destroy(newExplosion.gameObject, 5f);
+        Destroy(gameObject);
+    }
 }

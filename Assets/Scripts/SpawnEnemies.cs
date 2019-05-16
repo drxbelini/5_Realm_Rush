@@ -21,7 +21,7 @@ public class SpawnEnemies : MonoBehaviour
         {
             var newEnemy = Instantiate(Enemy, transform.position, Quaternion.identity);
             newEnemy.transform.parent = parentEmeny;
-            yield return new WaitForSeconds(3f);            
+            yield return new WaitForSeconds(SpawnSpeed);            
         }
     }
 }

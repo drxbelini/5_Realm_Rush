@@ -4245,6 +4245,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e3312953e087614a98f993ee319f9d6, type: 3}
+--- !u!1 &1098850595 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1716733542366808, guid: a467c20795e0fed40b0d21d2bebe3b04,
+    type: 3}
+  m_PrefabInstance: {fileID: 2022397594}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1098850598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098850595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee449090e6588bb44987795f520654b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifePoints: 5
 --- !u!4 &1111354694 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7305251734792626834, guid: 6e3312953e087614a98f993ee319f9d6,
@@ -5479,7 +5498,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy: {fileID: 114941686308246830, guid: 04f81ff9814844ccfa08226f8d46a3f4, type: 3}
   parentEmeny: {fileID: 1535695271}
-  SpawnSpeed: 3
+  SpawnSpeed: 2
 --- !u!4 &1536342669 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7305251734792626834, guid: 5f6bee956a49157438df466d8301e367,
