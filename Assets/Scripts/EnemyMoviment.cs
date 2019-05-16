@@ -24,7 +24,8 @@ public class EnemyMoviment : MonoBehaviour
             transform.position = waypoint.transform.position;
             yield return new WaitForSeconds(gameSpeed);
         }
-       // playerHelth.HelthDecreacer();
+        var playerDamege = FindObjectOfType<PlayerHelth>();
+        playerDamege.HelthDecreacer();
         damageOnBaseFX();
     }
 

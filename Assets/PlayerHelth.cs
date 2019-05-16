@@ -1,14 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHelth : MonoBehaviour
 {
-    [SerializeField] int lifePoints = 5;
+    [SerializeField] int lifePoints = 50000;
+    [SerializeField] int damagePoints = 1000;
+    [SerializeField] Text helthText;
 
-   public void HelthDecreacer()
+    private void Start()
     {
-        lifePoints--;
+        helthText.text = lifePoints.ToString();
+    }
+    public void HelthDecreacer()
+    {
+        lifePoints = lifePoints - damagePoints;
+        helthText.text = lifePoints.ToString();
 
         if (lifePoints <= 0)
         {
@@ -16,8 +24,10 @@ public class PlayerHelth : MonoBehaviour
         }
     }
 
-    private static void deathSequence()
+    private void deathSequence()
     {
+        helthText.text = "Base destroyed";
         print("your death");
+        Destroy(gameObject);
     }
 }
