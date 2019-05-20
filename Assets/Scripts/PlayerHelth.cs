@@ -8,6 +8,8 @@ public class PlayerHelth : MonoBehaviour
     [SerializeField] int lifePoints = 50000;
     [SerializeField] int damagePoints = 1000;
     [SerializeField] Text helthText;
+    [SerializeField] AudioClip damageSFX;
+    
 
     private void Start()
     {
@@ -15,6 +17,7 @@ public class PlayerHelth : MonoBehaviour
     }
     public void HelthDecreacer()
     {
+        GetComponent<AudioSource>().PlayOneShot(damageSFX);
         lifePoints = lifePoints - damagePoints;
         helthText.text = lifePoints.ToString();
 

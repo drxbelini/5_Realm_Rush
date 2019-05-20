@@ -8,6 +8,7 @@ public class EnemyMoviment : MonoBehaviour
     [SerializeField] float gameSpeed = .5f;
     [SerializeField] ParticleSystem explosionDamage;
     PlayerHelth playerHelth;
+    
 
     // Start is called before the first frame update
     void Start()

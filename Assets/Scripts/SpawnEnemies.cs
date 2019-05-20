@@ -9,6 +9,8 @@ public class SpawnEnemies : MonoBehaviour
     [SerializeField] Transform parentEmeny;
     [SerializeField] Text scoreText;
     [SerializeField] int enemyValue = 10;
+    [SerializeField] AudioClip spwanSFX;
+
     int scorePoint = 0;
 
 
@@ -26,12 +28,13 @@ public class SpawnEnemies : MonoBehaviour
         while (true) //forever
         {
             Score();
+            GetComponent<AudioSource>().PlayOneShot(spwanSFX);
             var newEnemy = Instantiate(Enemy, transform.position, Quaternion.identity);
-            newEnemy.transform.parent = parentEmeny;            
+            newEnemy.transform.parent = parentEmeny;
             yield return new WaitForSeconds(SpawnSpeed);
         }
     }
-
+    
     void Score()
     {
         scorePoint = scorePoint + enemyValue;
